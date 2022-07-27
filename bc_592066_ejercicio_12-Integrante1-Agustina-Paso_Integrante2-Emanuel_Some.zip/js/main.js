@@ -37,3 +37,26 @@ Integrante 2: ${nombresInt2.trim()} ${apellidosInt2.toUpperCase().trim()}
 `)
 
 
+/* ----- 4) ----- */
+console.log(`PUNTO 4 :`)
+
+/* console.log(vectorNombresInt_1)
+console.log(nombresInt2)
+console.log(vectorNombresInt_1.length)
+console.log(vectorNombresInt_1[0].textContent)
+ */
+
+for (let i = 0; i < vectorNombresInt_1.length; i++) {
+    const element = vectorNombresInt_1[i];
+    for (let j = 0; j < vectorNombresInt_2.length; j++) {
+        if (vectorNombresInt_1[i].textContent === vectorNombresInt_2[j].textContent) {
+            console.log (`
+                nombreInt 1: ${vectorNombresInt_1[i].textContent} es igual al nombreInt 2: ${vectorNombresInt_2[j].textContent}
+            `)
+            console.log("Hubo coincidencias")
+            const colorPrompt = prompt("Hubo concidencias, por favor ingresa un color:")
+            vectorNombresInt_1[i].style.color = colorPrompt
+            vectorNombresInt_2[j].style.color = colorPrompt
+        } 
+    } 
+}
