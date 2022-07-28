@@ -46,17 +46,25 @@ console.log(vectorNombresInt_1.length)
 console.log(vectorNombresInt_1[0].textContent)
  */
 
-for (let i = 0; i < vectorNombresInt_1.length; i++) {
-    const element = vectorNombresInt_1[i];
-    for (let j = 0; j < vectorNombresInt_2.length; j++) {
-        if (vectorNombresInt_1[i].textContent === vectorNombresInt_2[j].textContent) {
-            console.log (`
-                nombreInt 1: ${vectorNombresInt_1[i].textContent} es igual al nombreInt 2: ${vectorNombresInt_2[j].textContent}
-            `)
-            console.log("Hubo coincidencias")
-            const colorPrompt = prompt("Hubo concidencias, por favor ingresa un color:")
-            vectorNombresInt_1[i].style.color = colorPrompt
-            vectorNombresInt_2[j].style.color = colorPrompt
+buscarCoincidenciasyCambiarColor(vectorNombresInt_1,vectorNombresInt_2)
+if (window.confirm("¿Desea comparar los apellidos?")) {
+    buscarCoincidenciasyCambiarColor(vectorApellidosInt_1,vectorApellidosInt_2)
+}
+
+function buscarCoincidenciasyCambiarColor(vectorString_1, vectorString_2){
+    
+    for (let i = 0; i < vectorString_1.length; i++) {
+        const element = vectorString_1[i];
+        for (let j = 0; j < vectorString_2.length; j++) {
+            if (vectorString_1[i].textContent === vectorString_2[j].textContent) {
+                console.log (`
+                    nombreInt 1: ${vectorString_1[i].textContent} es igual al nombreInt 2: ${vectorString_2[j].textContent}
+                `)
+                console.log("Hubo coincidencias")
+                const colorPrompt = prompt("Hubo concidencias, por favor ingresa un color:")
+                vectorString_1[i].style.color = colorPrompt
+                vectorString_2[j].style.color = colorPrompt
+            } 
         } 
-    } 
+    }
 }
